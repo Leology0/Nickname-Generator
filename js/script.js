@@ -5,7 +5,6 @@ document.getElementById('allNick').addEventListener("click", allNicks);
 
 // Global Variables
 let containerEl = document.getElementById("container");
-
 // Array
 let myNicks = ["the Brother", "the Son", "the Gamer", "the Student"];
 
@@ -13,17 +12,17 @@ let myNicks = ["the Brother", "the Son", "the Gamer", "the Student"];
 function randomNick() {
     let firstInput = document.getElementById("firstName").value;
     let lastInput = document.getElementById("lastName").value;
-    containerEl.innerHTML = firstInput + ` "${myNicks[randomInt(0, 4)]}" ` + lastInput;
-    
+    containerEl.innerHTML = firstInput + ` ${myNicks[randomInt(0, 4)]} ` + lastInput;
 }
 // Grab all nicknames and format them correctly
 
-function allNicks(myNicks) {
+function allNicks() {
     let firstInput = document.getElementById("firstName").value;
     let lastInput = document.getElementById("lastName").value;
-    let outputStr = "";
+    let divStr = ""
     for (let i = 0; i < myNicks.length; i++) {
-        outputStr += `<div>${myNicks[i]}</div>`
+        if (myNicks[i].length <= 3)
+        divStr += myNicks[i]
     }
-    containerEl.innerHTML = firstInput + outputStr + lastInput
+    containerEl.innerHTML = firstInput + divStr + lastInput
 }
