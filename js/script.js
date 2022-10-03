@@ -12,7 +12,7 @@ let myNicks = ["the Brother", "the Son", "the Gamer", "the Student"];
 function randomNick() {
     let firstInput = document.getElementById("firstName").value;
     let lastInput = document.getElementById("lastName").value;
-    containerEl.innerHTML = firstInput + ` ${myNicks[randomInt(0, 4)]} ` + lastInput;
+    containerEl.innerHTML = firstInput + ` ${myNicks[randomInt(0, myNicks.length)]} ` + lastInput;
 }
 // Grab all nicknames and format them correctly
 
@@ -21,8 +21,8 @@ function allNicks() {
     let lastInput = document.getElementById("lastName").value;
     let divStr = ""
     for (let i = 0; i < myNicks.length; i++) {
-        if (myNicks[i].length <= 3)
-        divStr += myNicks[i]
+        divStr += `<div>${firstInput} ${myNicks[i]} ${lastInput}</div>`
     }
-    containerEl.innerHTML = firstInput + divStr + lastInput
+    containerEl.innerHTML = divStr;
 }
+
